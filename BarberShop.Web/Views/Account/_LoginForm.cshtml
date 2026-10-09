@@ -1,0 +1,7 @@
+<form id="login-form" class="customer-form">
+    <label for="login-email">E-mail</label><input id="login-email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required maxlength="150" />
+    <div class="field-label"><label for="login-password">Senha</label><button type="button" class="text-button" id="forgot-password">Esqueci minha senha</button></div>
+    <div class="password-field"><input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required minlength="6" maxlength="128" /><button type="button" id="toggle-password" aria-label="Mostrar senha" aria-pressed="false">Mostrar</button></div>
+    <button class="button primary full-width" type="submit">@(ViewData["InlineLogin"] is true ? "Entrar e concluir prévia" : "Entrar") <span>→</span></button>
+</form>
+<div class="form-feedback" id="login-feedback" role="status" hidden></div>

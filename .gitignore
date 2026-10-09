@@ -1,0 +1,8 @@
+.idea/
+.codex/
+.DS_Store
+
+# Saídas de compilação em qualquer nível.
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/

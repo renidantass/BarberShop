@@ -1,0 +1,30 @@
+@{ ViewData["Title"] = "Finalizar agendamento"; ViewData["InlineLogin"] = true; }
+<header class="header flow-header">
+    <a class="brand" href="/"><span class="brand-icon">✂</span><span>NAVALHA<small>BARBEARIA & ESTILO</small></span></a>
+    <a class="back-link" href="/#agenda">← Voltar e escolher outro horário</a>
+</header>
+<main class="checkout-page">
+    <div class="flow-progress" aria-label="Etapas do agendamento"><span class="completed"><b>✓</b> Seu corte</span><i></i><span class="current" aria-current="step"><b>02</b> Finalizar</span></div>
+    <div class="section-heading" id="checkout-heading"><div><p class="eyebrow">MAIS UM PASSO, E PRONTO</p><h1>Vamos reservar seu momento?</h1><p class="form-intro">Confira sua escolha e conte pra gente quem vem.</p></div></div>
+    <div id="checkout-content" class="checkout-grid" hidden>
+        <section class="customer-card">
+            <div class="identity-options" role="group" aria-label="Como deseja continuar"><button type="button" class="selected" data-identity="guest" aria-pressed="true">Continuar sem conta</button><button type="button" data-identity="account" aria-pressed="false">Já tenho conta</button></div>
+            <div class="customer-card-body">
+                <div id="account-panel" hidden><h3>Bom te ver de novo.</h3><p class="form-intro">Entre para concluir sua prévia nesta etapa.</p><partial name="_LoginForm" /><p class="demo-note">Login demonstrativo · nenhuma autenticação será realizada.</p></div>
+                <div id="guest-panel"><h3>Como podemos te chamar?</h3><p class="form-intro">Informe seus dados para finalizar.</p>
+                <form id="booking-form" class="customer-form">
+                    <label for="customer-name">Nome completo</label><input id="customer-name" name="name" autocomplete="name" placeholder="Seu nome e sobrenome" required minlength="3" maxlength="100" />
+                    <label for="customer-phone">Celular / WhatsApp</label><input id="customer-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" required pattern="[+0-9() .-]{10,20}" maxlength="20" /><small class="field-hint">Inclua o DDD do seu celular.</small>
+                    <label for="customer-email">E-mail <span class="optional">opcional</span></label><input id="customer-email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" maxlength="150" />
+                    <label for="customer-note">Algum detalhe sobre seu corte? <span class="optional">opcional</span></label><textarea id="customer-note" name="note" rows="3" placeholder="Uma referência, preferência ou pedido especial…" maxlength="500"></textarea>
+                    <div class="form-demo-banner"><span>◈</span><p>Esta é uma prévia do agendamento. Seus dados não serão enviados e nenhum horário será reservado.</p></div>
+                    <button class="button primary full-width" type="submit">Concluir demonstração <span>→</span></button>
+                </form>
+                </div>
+            </div>
+        </section>
+        <aside class="summary checkout-summary"><div class="summary-heading"><span>SEU AGENDAMENTO</span><span>✦</span></div><h3>Um momento só seu.</h3><p>Confira os detalhes do seu próximo corte.</p><div class="summary-details"><div><span>Serviço</span><strong id="review-service"></strong></div><div><span>Profissional</span><strong id="review-barber"></strong></div><div><span>Data</span><strong id="review-date"></strong></div><div><span>Horário</span><strong id="review-time"></strong></div><div><span>Duração</span><strong id="review-duration"></strong></div></div><div class="summary-total"><span>Total do serviço</span><strong id="review-price"></strong></div><a class="edit-booking" href="/#agenda">← Alterar minha escolha</a><p class="summary-footnote">O cuidado começa antes da cadeira.</p></aside>
+    </div>
+    <section id="booking-success" class="booking-success" hidden tabindex="-1"><span class="success-icon">✓</span><p class="eyebrow">PRÉVIA CONCLUÍDA</p><h2>Esse momento combina com você.</h2><p id="success-details"></p><p class="success-note">Este fluxo é uma demonstração visual.<br>Nenhuma reserva foi criada e seus dados não foram enviados.</p><a class="button primary" href="/">Voltar para a barbearia <span>→</span></a></section>
+</main>
+<footer><a class="footer-brand" href="/">NAVALHA<span> BARBEARIA</span></a><p>Feito para quem valoriza o próprio estilo.</p><span>© @DateTime.Now.Year Navalha</span></footer>

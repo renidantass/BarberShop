@@ -1,0 +1,83 @@
+@{
+    ViewData["Title"] = "Seu próximo corte";
+}
+<header class="header">
+    <a class="brand" href="#" aria-label="Navalha Barbearia, início"><span class="brand-icon">✂</span><span>NAVALHA<small>BARBEARIA & ESTILO</small></span></a>
+    <nav aria-label="Navegação principal"><a href="#servicos">Serviços</a><a href="#equipe">Nossa equipe</a><a href="#sobre">A barbearia</a><a href="/Home/Login">Entrar</a></nav>
+    <a class="header-cta" href="#agenda">Agendar horário <span>↗</span></a>
+</header>
+<main>
+    <section class="hero">
+        <div class="hero-copy"><p class="eyebrow"><span></span> SEU ESTILO, NOSSO OFÍCIO</p><h1>Um bom corte.<br>Uma nova <em>versão.</em></h1><p class="hero-description">Mais que cabelo e barba. Um tempo para você.<br>Escolha seu estilo e deixe o resto com a gente.</p><a class="button primary" href="#agenda">Encontre seu horário <span>↗</span></a><div class="social-proof"><div class="avatar-stack"><span>R</span><span>M</span><span>J</span></div><div><span class="stars">★★★★★</span><p><strong>4,9/5</strong> de quem já sentou na cadeira</p></div></div></div>
+        <div class="transformation" aria-label="Animação de um cabelo sendo renovado por um corte">
+            <div class="transformation-top"><span>NAVALHA · O CUIDADO TRANSFORMA</span><button class="animation-toggle" type="button" aria-label="Pausar animação" aria-pressed="false">Ⅱ</button></div>
+            <div class="portrait-stage">
+                <svg class="cut-portrait" viewBox="0 0 440 330" role="img" aria-labelledby="cut-title cut-description">
+                    <title id="cut-title">Um bom corte. Uma nova versão.</title>
+                    <desc id="cut-description">Ilustração de perfil: uma tesoura passa pelo cabelo e revela um corte curto, com acabamento alinhado.</desc>
+                    <defs>
+                        <linearGradient id="skin-tone" x1="0" y1="0" x2="1" y2=".7"><stop stop-color="#d1b68e"/><stop offset=".5" stop-color="#ead7b7"/><stop offset="1" stop-color="#c4a47d"/></linearGradient>
+                        <linearGradient id="neck-tone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a98b66"/><stop offset="1" stop-color="#dbc19b"/></linearGradient>
+                        <linearGradient id="hair-tone" x1="0" y1="1" x2=".5" y2="0"><stop stop-color="#29352c"/><stop offset="1" stop-color="#4b5140"/></linearGradient>
+                        <linearGradient id="fade-tone" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#434a38"/><stop offset=".75" stop-color="#a89b79"/><stop offset="1" stop-color="#cfb690"/></linearGradient>
+                        <linearGradient id="jacket-tone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#566851"/><stop offset="1" stop-color="#293d32"/></linearGradient>
+                        <radialGradient id="portrait-halo"><stop stop-color="#bfcaa4" stop-opacity=".18"/><stop offset="1" stop-color="#bfcaa4" stop-opacity="0"/></radialGradient>
+                        <pattern id="fade-texture" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".45" fill="#32422e" opacity=".3"/></pattern>
+                    </defs>
+                    <ellipse cx="220" cy="171" rx="147" ry="149" fill="url(#portrait-halo)"/>
+                    <path d="M119 275V131c0-59 45-99 101-99s101 40 101 99v144" fill="none" stroke="#c7d0ab" stroke-opacity=".2" stroke-width=".8"/>
+                    <path d="M109 254V131c0-66 48-109 111-109s111 43 111 109v123" fill="none" stroke="#c7d0ab" stroke-opacity=".08" stroke-width=".8"/>
+                    <ellipse cx="217" cy="314" rx="111" ry="8" fill="#142a20" opacity=".35"/>
+                    <g class="portrait-person">
+                        <path d="M106 320c4-39 37-56 78-66l28 11 29-16c43 13 80 26 92 71Z" fill="url(#jacket-tone)"/>
+                        <path d="m181 209 3 45 28 26 31-27-5-49Z" fill="url(#neck-tone)"/>
+                        <path d="M180 214c14 21 34 33 60 24l-1-23Z" fill="#8c7154" opacity=".24"/>
+                        <path d="M157 124c-1-47 26-72 66-72 39 0 65 26 63 65l-3 30c-1 7 3 13 9 19l8 9c4 5 1 8-5 9l-11 2-2 13 4 6-5 7-2 11c-3 14-15 20-32 18-20-2-40-14-57-33-22-24-32-51-33-84Z" fill="url(#skin-tone)"/>
+                        <path d="M239 112c17 5 25 20 29 34l-5 32-10 19 23 3c-5 20-17 30-34 27-10-2-22-9-32-18" fill="#aa8e68" opacity=".14"/>
+                        <path d="M269 143q8-5 15-1" fill="none" stroke="#595641" stroke-width="3" stroke-linecap="round"/>
+                        <path d="m273 152 9 1m-2 0-2 3" fill="none" stroke="#675a43" stroke-width="1.7" stroke-linecap="round"/>
+                        <path d="m286 181-7 2m-1 19 7 1m-9 9 6-1" fill="none" stroke="#937556" stroke-width="1.2" stroke-linecap="round"/>
+                        <g class="hair-before">
+                            <path d="M154 168c-10-20-16-48-7-69-9-15 2-30 15-34 3-18 21-26 35-21 14-17 35-16 46-5 22-6 43 6 43 22 17 6 19 22 6 36-6 10-14 14-24 10l-20-7-18 8-18-3-13 17-5 29-16 22-8 15Z" fill="url(#hair-tone)"/>
+                            <g fill="none" stroke="#879072" stroke-width="1" stroke-opacity=".45" stroke-linecap="round"><path d="M153 107c2-27 21-43 43-43m-36 43c6-23 24-34 44-35m-17-14c17-9 36-10 53-1m-24 5c23-7 44 0 56 13m-28-3c18 0 31 8 33 18m-102 37 10-13m-27 41 10-14"/></g>
+                        </g>
+                        <g class="hair-after">
+                            <path d="M156 146c-9-35-4-65 20-83 32-23 82-18 111 15-5 18-31 26-51 25l-26-2-21 22-4 35-11 10Z" fill="url(#fade-tone)"/>
+                            <path d="M155 127c-4-24 7-43 28-53l10 47-9 38-10 8Z" fill="url(#fade-texture)"/>
+                            <path d="M156 106c-1-33 20-58 57-61 34-3 60 9 79 30-9 17-25 24-50 23-34-2-60-1-86 19Z" fill="url(#hair-tone)"/>
+                            <g fill="none" stroke="#9aa184" stroke-width=".9" stroke-opacity=".5" stroke-linecap="round"><path d="M165 97c25-29 58-36 93-22m-88 28c28-25 58-29 96-20m-92 25c26-20 58-24 92-19m-84 23c21-13 43-17 66-15m-65-11c22-20 47-23 68-16"/></g>
+                            <path d="m188 132-4 30" stroke="#687154" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M188 184c9 10 11 20 22 25 13 8 24 7 34 9 10 2 17-3 27-8l-3 15c-9 9-21 10-34 5-23-8-39-23-46-37Z" fill="#4a4d38" opacity=".38"/>
+                        </g>
+                        <path d="M182 154c-9-13-24-9-23 5 0 16 9 25 21 22l5-9Z" fill="#d2b68d"/>
+                        <path d="M176 157c-8-5-12 2-8 12m1-8c6-3 10 2 6 8" stroke="#aa8964" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                        <path d="m175 258 37 22-14 24-29-39m77-11-34 26 17 24 29-42" fill="#718368"/>
+                        <path d="m175 258 37 22 34-26M212 282v36m-65-30 15 27m119-31-9 31" stroke="#afbc95" stroke-width=".8" stroke-opacity=".3" fill="none"/>
+                        <circle cx="219" cy="305" r="1.4" fill="#bec6a0" opacity=".55"/>
+                    </g>
+                    <g class="cut-comb" fill="none" stroke="#b7c39b" stroke-width="1.5" stroke-linecap="round"><path d="M0 0h58M3 0v14m6-14v14m6-14v14m6-14v14m6-14v14m6-14v14m6-14v14m6-14v14m6-14v14m6-14v14"/></g>
+                    <g class="cut-scissors" fill="none" stroke="#e7e6d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="scissor-blade-one"><ellipse cx="-21" cy="12" rx="8" ry="6"/><path d="m-14 8 41-21-22 7"/></g><g class="scissor-blade-two"><ellipse cx="-21" cy="-12" rx="8" ry="6"/><path d="m-14-8 41 21-22-7"/></g><circle r="2.5" fill="#a8b28e" stroke="none"/></g>
+                    <g class="hair-clippings" stroke="#b9c49e" stroke-width="1.3" stroke-linecap="round"><path class="clipping-one" d="m173 84 5 3"/><path class="clipping-two" d="m221 64 5-2"/><path class="clipping-three" d="m270 80 4 4"/></g>
+                    <g class="cut-sparkle" fill="none" stroke="#cad4b1" stroke-width="1" stroke-linecap="round"><path d="m313 129 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"/><path d="M130 216v7m-3.5-3.5h7"/></g>
+                </svg>
+                <span class="portrait-side-label">PRECISÃO EM CADA DETALHE</span>
+            </div>
+            <div class="transformation-bottom"><div class="transformation-captions"><div class="caption-before"><span>01 · ANTES DO CORTE</span><strong>Todo estilo tem um começo.</strong></div><div class="caption-after"><span>02 · SUA NOVA VERSÃO</span><strong>O mesmo você. Um novo olhar.</strong></div></div><div class="cut-timeline" aria-hidden="true"><span class="timeline-before">O COMEÇO</span><div class="cut-progress"><span></span></div><span class="timeline-after">A NOVA VERSÃO</span></div></div>
+        </div>
+    </section>
+    <div class="benefits"><span><b>✦</b> Profissionais que entendem seu estilo</span><span><b>◷</b> Seu horário, sem esperar na fila</span><span><b>↗</b> Agendamento simples e rápido</span></div>
+    <section class="booking-section" id="agenda">
+        <div class="section-heading"><div><p class="eyebrow">NA SUA AGENDA</p><h2>Seu próximo corte começa aqui.</h2></div><p>Escolha. Agende. Apareça.<br>A gente cuida dos detalhes.</p></div>
+        <div class="booking-grid"><div class="booking-main">
+            <section class="booking-step" id="servicos"><div class="step-title"><span class="step-number">01</span><h3>O que vamos fazer hoje?</h3><span class="step-note">Escolha um serviço</span></div><div class="service-grid">
+                <button class="service selected" data-name="Corte de cabelo" data-price="45" data-duration="40" aria-pressed="true"><span class="service-top"><span class="service-icon">✂</span><span class="selection-dot"></span></span><strong>Corte de cabelo</strong><span class="service-description">Do clássico ao seu estilo.</span><span class="service-bottom"><b>R$ 45<span>,00</span></b><span>◷ 40 min</span></span></button>
+                <button class="service" data-name="Barba completa" data-price="35" data-duration="30" aria-pressed="false"><span class="service-top"><span class="service-icon">♧</span><span class="selection-dot"></span></span><strong>Barba completa</strong><span class="service-description">Alinhada nos detalhes.</span><span class="service-bottom"><b>R$ 35<span>,00</span></b><span>◷ 30 min</span></span></button>
+                <button class="service" data-name="Corte + barba" data-price="70" data-duration="60" aria-pressed="false"><span class="service-top"><span class="service-icon">✦</span><span class="combo-badge">O FAVORITO</span><span class="selection-dot"></span></span><strong>Corte + barba</strong><span class="service-description">A experiência completa.</span><span class="service-bottom"><b>R$ 70<span>,00</span></b><span>◷ 60 min</span></span></button>
+            </div></section>
+            <section class="booking-step" id="equipe"><div class="step-title"><span class="step-number">02</span><h3>Quem vai cuidar do seu estilo?</h3></div><div class="barber-grid"><button class="barber selected" data-barber="Sem preferência" aria-pressed="true"><span class="barber-avatar any">✂</span><span><strong>Sem preferência</strong><small>Primeiro disponível</small></span><span class="selection-dot"></span></button><button class="barber" data-barber="Rafael" aria-pressed="false"><span class="barber-avatar rafael">R</span><span><strong>Rafael</strong><small>Cortes & degradês</small></span><span class="selection-dot"></span></button><button class="barber" data-barber="Lucas" aria-pressed="false"><span class="barber-avatar lucas">L</span><span><strong>Lucas</strong><small>Cortes & barba</small></span><span class="selection-dot"></span></button></div></section>
+            <section class="booking-step"><div class="step-title"><span class="step-number">03</span><h3>Um momento só seu.</h3><span class="step-note month-label"></span></div><div class="date-strip" aria-label="Escolha uma data"></div><div class="time-heading"><span>Horários disponíveis</span><span><i></i> Agenda demonstrativa</span></div><div class="time-grid" aria-label="Escolha um horário"><button data-time="09:00">09:00</button><button data-time="09:40">09:40</button><button disabled>10:20</button><button data-time="11:00">11:00</button><button data-time="11:40">11:40</button><button data-time="13:00">13:00</button><button data-time="13:40">13:40</button><button data-time="14:20">14:20</button><button disabled>15:00</button><button data-time="15:40">15:40</button><button data-time="16:20">16:20</button><button data-time="17:00">17:00</button></div><p class="availability-note">Horários em cinza estão indisponíveis nesta demonstração.</p></section>
+        </div><aside class="summary"><div class="summary-heading"><span>SEU MOMENTO</span><span>✦</span></div><h3>Tá quase marcado.</h3><p>Um bom visual começa com<br>um espaço na agenda.</p><div class="summary-details"><div><span>Serviço</span><strong id="summary-service">Corte de cabelo</strong></div><div><span>Profissional</span><strong id="summary-barber">Sem preferência</strong></div><div><span>Data</span><strong id="summary-date"></strong></div><div><span>Horário</span><strong id="summary-time">Escolha um horário</strong></div><div><span>Duração</span><strong id="summary-duration">40 minutos</strong></div></div><div class="summary-total"><span>Total</span><strong id="summary-price">R$ 45,00</strong></div><button class="button primary confirm" disabled>Continuar <span>→</span></button><p class="summary-footnote">◈ Layout de demonstração<br>Nenhuma reserva será realizada.</p><div class="confirmation" role="status" hidden></div></aside></div>
+    </section>
+    <section class="about" id="sobre"><div class="about-symbol">N<span>✦</span></div><div><p class="eyebrow">TRADIÇÃO NO CORTE. PERSONALIDADE NO JEITO.</p><h2>Uma cadeira. Muitas histórias.</h2><p>Um ambiente tranquilo, uma boa conversa e atenção a cada detalhe.<br>Aqui, você se sente em casa e sai na sua melhor versão.</p></div><a href="#agenda">Vem pra Navalha <span>↗</span></a></section>
+</main>
+<footer><a class="footer-brand" href="#">NAVALHA<span> BARBEARIA</span></a><p>Feito para quem valoriza o próprio estilo.</p><span>© @DateTime.Now.Year Navalha</span></footer>

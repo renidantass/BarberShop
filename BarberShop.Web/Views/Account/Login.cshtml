@@ -1,0 +1,19 @@
+@{ ViewData["Title"] = "Entrar"; }
+<header class="header flow-header">
+    <a class="brand" href="/"><span class="brand-icon">✂</span><span>NAVALHA<small>BARBEARIA & ESTILO</small></span></a>
+    <a class="back-link" href="/#agenda">← Voltar para a barbearia</a>
+</header>
+<main class="login-page">
+    <section class="login-visual">
+        <img src="~/images/barbearia-interior.jpg" asp-append-version="true" alt="Cadeira de couro em uma barbearia com iluminação acolhedora." width="1254" height="1254" />
+        <div class="login-visual-copy"><p class="eyebrow">SEU LUGAR DE SEMPRE</p><h2>Bom te ver<br>por aqui.</h2><p>Seu próximo corte, no seu tempo.<br>Seu estilo, nas mãos de quem cuida.</p></div>
+    </section>
+    <section class="login-content">
+        <p class="eyebrow">UM TEMPO PARA VOCÊ</p><h1>Entre e fique à vontade.</h1><p class="form-intro">Acesse sua conta na Navalha.</p>
+        <partial name="_LoginForm" />
+        <div class="form-divider"><span>PRIMEIRA VEZ POR AQUI?</span></div>
+        <a class="button secondary full-width" id="guest-link" href="/#agenda">Escolher um horário <span>↗</span></a>
+        <p class="demo-note">Prévia de layout · login demonstrativo, sem autenticação.</p>
+    </section>
+</main>
+<footer><a class="footer-brand" href="/">NAVALHA<span> BARBEARIA</span></a><p>Feito para quem valoriza o próprio estilo.</p><span>© @DateTime.Now.Year Navalha</span></footer>
