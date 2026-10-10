@@ -1,7 +1,10 @@
+using BarberShop.CrossCutting;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddBarberShopServices(builder.Configuration);
 
 var app = builder.Build();
 

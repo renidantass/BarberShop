@@ -8,7 +8,8 @@ public class Servico
     public string Nome { get; private set; }
     public decimal Preco { get; private set; }
     public string? Detalhes { get; private set; }
-    
+    public ICollection<Agendamento> Agendamentos { get; set; }
+
     private Servico()
     {
         

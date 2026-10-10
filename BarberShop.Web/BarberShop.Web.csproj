@@ -7,4 +7,8 @@
         <RootNamespace>BarberShop</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\BarberShop.CrossCutting\BarberShop.CrossCutting.csproj" />
+    </ItemGroup>
+
 </Project>

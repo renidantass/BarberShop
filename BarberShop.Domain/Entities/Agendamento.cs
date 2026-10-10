@@ -10,24 +10,23 @@ public class Agendamento
     public Barbeiro Barbeiro { get; private set; }
     public int ClienteId { get; private set; }
     public Cliente Cliente { get; private set; }
-    public int ServicoId { get; private set; }
-    public Servico Servico { get; private set; }
+    public ICollection<Servico> Servicos { get; private set; }
     public decimal PrecoCobrado { get; private set; }
 
     private Agendamento()
     {
     }
 
-    private Agendamento(DateTime data, int barbeiroId, int clienteId, int servicoId, decimal precoCobrado)
+    private Agendamento(DateTime data, int barbeiroId, int clienteId, IList<Servico> servicos)
     {
         Data = data;
         BarbeiroId = barbeiroId;
         ClienteId = clienteId;
-        ServicoId = servicoId;
-        PrecoCobrado = precoCobrado;
+        Servicos = servicos;
+        PrecoCobrado = servicos.Sum(s => s.Preco);
     }
     
-    public static Resultado<Agendamento> Criar(DateTime data, int barbeiroId, int clienteId, Servico? servico)
+    public static Resultado<Agendamento> Criar(DateTime data, int barbeiroId, int clienteId, IList<Servico> servicos)
     {
         DateTime hoje = DateTime.UtcNow;
         
@@ -46,16 +45,19 @@ public class Agendamento
             return Resultado<Agendamento>.Falha("Cliente inválido");
         }
         
-        if (servico == null)
+        if (servicos == null)
         {
             return Resultado<Agendamento>.Falha("Serviço inválido");
         }
         
-        if (servico.Preco <= 0)
+        foreach(Servico servico in servicos)
         {
-            return Resultado<Agendamento>.Falha("Preço inválido");
+            if (servico.Preco <= 0)
+            {
+                return Resultado<Agendamento>.Falha("Preço do serviço inválido");
+            }
         }
         
-        return Resultado<Agendamento>.Ok(new Agendamento(data, barbeiroId, clienteId, servico.Id, servico.Preco));
+        return Resultado<Agendamento>.Ok(new Agendamento(data, barbeiroId, clienteId, servicos));
     }
 }
