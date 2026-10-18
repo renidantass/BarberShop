@@ -10,7 +10,9 @@ namespace BarberShop.Infrastructure.Configurations
         {
             builder.HasKey(a => a.Id);
 
-            builder.Property(a => a.Data).IsRequired();
+            builder.Property(a => a.IniciaEm).IsRequired();
+            
+            builder.Property(a => a.TerminaEm).IsRequired();
 
             builder.HasOne(a => a.Barbeiro)
                 .WithMany(b => b.Agendamentos)

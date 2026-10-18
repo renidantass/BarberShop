@@ -5,7 +5,8 @@ namespace BarberShop.Domain.Entities;
 public class Agendamento
 {
     public int Id { get; private set; }
-    public DateTime Data { get; private set; }
+    public DateTime IniciaEm { get; private set; }
+    public DateTime TerminaEm { get; set; }
     public int BarbeiroId { get; private set; }
     public Barbeiro Barbeiro { get; private set; }
     public int ClienteId { get; private set; }
@@ -17,22 +18,28 @@ public class Agendamento
     {
     }
 
-    private Agendamento(DateTime data, int barbeiroId, int clienteId, IList<Servico> servicos)
+    private Agendamento(DateTime inicio, DateTime fim, int barbeiroId, int clienteId, IList<Servico> servicos)
     {
-        Data = data;
+        IniciaEm = inicio;
+        TerminaEm = fim;
         BarbeiroId = barbeiroId;
         ClienteId = clienteId;
         Servicos = servicos;
         PrecoCobrado = servicos.Sum(s => s.Preco);
     }
     
-    public static Resultado<Agendamento> Criar(DateTime data, int barbeiroId, int clienteId, IList<Servico> servicos)
+    public static Resultado<Agendamento> Criar(DateTime inicio, DateTime fim, int barbeiroId, int clienteId, IList<Servico> servicos)
     {
-        DateTime hoje = DateTime.UtcNow;
+        DateTime agora = DateTime.UtcNow;
         
-        if (data < hoje.AddHours(1))
+        if (inicio < agora.AddHours(1))
         {
             return Resultado<Agendamento>.Falha("Data inválida, intervalo mínimo de 1 hora de antecedência");
+        }
+
+        if (fim < inicio)
+        {
+            return Resultado<Agendamento>.Falha("Data inválida, não pode terminar antes de ter começado");
         }
         
         if (barbeiroId <= 0)
@@ -58,6 +65,6 @@ public class Agendamento
             }
         }
         
-        return Resultado<Agendamento>.Ok(new Agendamento(data, barbeiroId, clienteId, servicos));
+        return Resultado<Agendamento>.Ok(new Agendamento(inicio, fim, barbeiroId, clienteId, servicos));
     }
 }

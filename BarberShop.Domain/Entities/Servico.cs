@@ -7,6 +7,7 @@ public class Servico
     public int Id { get; private set; }
     public string Nome { get; private set; }
     public decimal Preco { get; private set; }
+    public TimeSpan Duracao { get; set; }
     public string? Detalhes { get; private set; }
     public ICollection<Agendamento> Agendamentos { get; set; }
 
@@ -15,14 +16,15 @@ public class Servico
         
     }
 
-    private Servico(string nome, decimal preco, string? detalhes)
+    private Servico(string nome, decimal preco, TimeSpan duracao, string? detalhes)
     {
         Nome = nome;
         Preco = preco;
+        Duracao = duracao;
         Detalhes = detalhes;
     }
 
-    public static Resultado<Servico> Criar(string nome, decimal preco, string? detalhes)
+    public static Resultado<Servico> Criar(string nome, decimal preco, TimeSpan duracao, string? detalhes)
     {
         if (string.IsNullOrWhiteSpace(nome))
         {
@@ -34,6 +36,11 @@ public class Servico
             return Resultado<Servico>.Falha("Preço inválido");
         }
 
+        if (duracao.Minutes <= 0)
+        {
+            return Resultado<Servico>.Falha("Duração inválida");
+        }
+
         detalhes = string.IsNullOrWhiteSpace(detalhes) ? null : detalhes.Trim();
 
         if (detalhes?.Length > 500)
@@ -41,6 +48,6 @@ public class Servico
             return Resultado<Servico>.Falha("Detalhes muito longo");
         }
 
-        return Resultado<Servico>.Ok(new Servico(nome.Trim(), preco, detalhes));
+        return Resultado<Servico>.Ok(new Servico(nome.Trim(), preco, duracao, detalhes));
     }
 }
